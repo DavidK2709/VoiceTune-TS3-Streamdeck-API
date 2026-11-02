@@ -1,0 +1,66 @@
+{
+	"Name": "VoiceTune StreamDeck API",
+	"Version": "0.1.0.0",
+	"Author": "Dave Swift",
+	"Actions": [
+	{
+		"Name": "Musik Ein/Aus", "UUID": "de.david.voicetune.toggle",
+		"Icon": "imgs/actions/counter/icon", "Tooltip": "Musik einspielen ein/aus",
+		"Controllers": ["Keypad"],
+		"States": [
+		{ "Image": "imgs/actions/counter/key", "Title": "Musik\nAus" },
+		{ "Image": "imgs/actions/counter/key", "Title": "Musik\nAn" }
+		]
+	},
+	{
+		"Name": "Mikro stumm", "UUID": "de.david.voicetune.micmute",
+		"Icon": "imgs/actions/counter/icon", "Tooltip": "Mikrofon stumm/an",
+		"Controllers": ["Keypad"],
+		"States": [
+		{ "Image": "imgs/actions/counter/key", "Title": "Mikro\nAn" },
+		{ "Image": "imgs/actions/counter/key", "Title": "Mikro\nStumm" }
+		]
+	},
+	{
+		"Name": "Play/Pause", "UUID": "de.david.voicetune.playpause",
+		"Icon": "imgs/actions/counter/icon", "Tooltip": "Datei-Player Play/Pause",
+		"Controllers": ["Keypad"],
+		"States": [
+		{ "Image": "imgs/actions/counter/key", "Title": "Play" },
+		{ "Image": "imgs/actions/counter/key", "Title": "Pause" }
+		]
+	},
+	{ "Name": "Weiter", "UUID": "de.david.voicetune.next", "Icon": "imgs/actions/counter/icon", "Tooltip": "Nächster Titel",
+		"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Weiter" }] },
+	{ "Name": "Zurück", "UUID": "de.david.voicetune.prev", "Icon": "imgs/actions/counter/icon", "Tooltip": "Vorheriger Titel",
+		"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Zurück" }] },
+	{ "Name": "Lauter", "UUID": "de.david.voicetune.volup", "Icon": "imgs/actions/counter/icon", "Tooltip": "Musik lauter (+10 %)",
+		"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Lauter" }] },
+	{ "Name": "Leiser", "UUID": "de.david.voicetune.voldown", "Icon": "imgs/actions/counter/icon", "Tooltip": "Musik leiser (-10 %)",
+		"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Leiser" }] }
+	]
+	"Category": "VoiceTune StreamDeck API",
+	"CategoryIcon": "imgs/plugin/category-icon",
+	"CodePath": "bin/plugin.js",
+	"Description": "Schnittstelle zwischen TS3 VoiceTune und Streamdeck",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 3,
+	"Software": {
+		"MinimumVersion": "7.1"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "12"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Nodejs": {
+		"Version": "24",
+		"Debug": "enabled"
+	},
+	"UUID": "com.dave-swift.voicetune-streamdeck-api"
+}
