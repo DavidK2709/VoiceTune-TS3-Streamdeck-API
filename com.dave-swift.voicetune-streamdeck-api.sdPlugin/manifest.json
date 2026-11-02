@@ -1,7 +1,7 @@
 {
-	"Name": "VoiceTune StreamDeck API",
-	"Version": "0.1.0.0",
-	"Author": "Dave Swift",
+	"Name": "VoiceTune StreamDeck Hotkeys",
+	"Version": "0.3.0.0",
+	"Author": "Dave Swift X Michael Schulz",
 	"Actions": [
 		{
 			"Name": "Musik Ein/Aus",
@@ -121,10 +121,11 @@
 			]
 		}
 	],
-	"Category": "VoiceTune StreamDeck API",
+	"Category": "VoiceTune StreamDeck Hotkeys",
 	"CategoryIcon": "imgs/plugin/category-icon",
 	"CodePath": "bin/plugin.js",
-	"Description": "Schnittstelle zwischen TS3 VoiceTune und Streamdeck",
+	"Description": "Streamdeck Bedienungselemente für VoiceTune Teamspeak Plugin.\n\nTeamspeak-Plugin: https://github.com/DavidK2709/VoiceTune-TS3/\n\n\n\n\n\n\nby Dave Swift X Michael Schulz",
+	"URL": "https://github.com/DavidK2709/VoiceTune-TS3-Streamdeck-API",
 	"Icon": "imgs/plugin/marketplace",
 	"SDKVersion": 3,
 	"Software": {
