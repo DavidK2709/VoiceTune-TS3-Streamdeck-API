@@ -4,40 +4,122 @@
 	"Author": "Dave Swift",
 	"Actions": [
 		{
-			"Name": "Musik Ein/Aus", "UUID": "com.dave-swift.voicetune-streamdeck-api.toggle",
-			"Icon": "imgs/actions/counter/icon", "Tooltip": "Musik einspielen ein/aus",
-			"Controllers": ["Keypad"],
+			"Name": "Musik Ein/Aus",
+			"UUID": "com.dave-swift.voicetune-streamdeck-api.toggle",
+			"Icon": "imgs/actions/icons/play",
+			"Tooltip": "Musik einspielen ein/aus",
+			"Controllers": [
+				"Keypad"
+			],
 			"States": [
-				{ "Image": "imgs/actions/counter/key", "Title": "Musik\nAus" },
-				{ "Image": "imgs/actions/counter/key", "Title": "Musik\nAn" }
+				{
+					"Image": "imgs/actions/icons/music_toggle_off",
+					"Title": "Musik\nAus"
+				},
+				{
+					"Image": "imgs/actions/icons/music_toggle_on",
+					"Title": "Musik\nAn"
+				}
 			]
 		},
 		{
-			"Name": "Mikro stumm", "UUID": "com.dave-swift.voicetune-streamdeck-api.micmute",
-			"Icon": "imgs/actions/counter/icon", "Tooltip": "Mikrofon stumm/an",
-			"Controllers": ["Keypad"],
+			"Name": "Mikro stumm",
+			"UUID": "com.dave-swift.voicetune-streamdeck-api.micmute",
+			"Icon": "imgs/actions/icons/mic_toggle_on",
+			"Tooltip": "Mikrofon stumm/an",
+			"Controllers": [
+				"Keypad"
+			],
 			"States": [
-				{ "Image": "imgs/actions/counter/key", "Title": "Mikro\nAn" },
-				{ "Image": "imgs/actions/counter/key", "Title": "Mikro\nStumm" }
+				{
+					"Image": "imgs/actions/icons/mic_toggle_on",
+					"Title": "Mikro\nAn"
+				},
+				{
+					"Image": "imgs/actions/icons/mic_toggle_off",
+					"Title": "Mikro\nStumm"
+				}
 			]
 		},
 		{
-			"Name": "Play/Pause", "UUID": "com.dave-swift.voicetune-streamdeck-api.playpause",
-			"Icon": "imgs/actions/counter/icon", "Tooltip": "Datei-Player Play/Pause",
-			"Controllers": ["Keypad"],
+			"Name": "Play/Pause",
+			"UUID": "com.dave-swift.voicetune-streamdeck-api.playpause",
+			"Icon": "imgs/actions/icons/play",
+			"Tooltip": "Datei-Player Play/Pause",
+			"Controllers": [
+				"Keypad"
+			],
 			"States": [
-				{ "Image": "imgs/actions/counter/key", "Title": "Play" },
-				{ "Image": "imgs/actions/counter/key", "Title": "Pause" }
+				{
+					"Image": "imgs/actions/icons/play",
+					"Title": "Play"
+				},
+				{
+					"Image": "imgs/actions/icons/pause",
+					"Title": "Pause"
+				}
 			]
 		},
-		{ "Name": "Weiter", "UUID": "com.dave-swift.voicetune-streamdeck-api.next", "Icon": "imgs/actions/counter/icon", "Tooltip": "Nächster Titel",
-			"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Weiter" }] },
-		{ "Name": "Zurück", "UUID": "com.dave-swift.voicetune-streamdeck-api.prev", "Icon": "imgs/actions/counter/icon", "Tooltip": "Vorheriger Titel",
-			"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Zurück" }] },
-		{ "Name": "Lauter", "UUID": "com.dave-swift.voicetune-streamdeck-api.volup", "Icon": "imgs/actions/counter/icon", "Tooltip": "Musik lauter (+10 %)",
-			"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Lauter" }] },
-		{ "Name": "Leiser", "UUID": "com.dave-swift.voicetune-streamdeck-api.voldown", "Icon": "imgs/actions/counter/icon", "Tooltip": "Musik leiser (-10 %)",
-			"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Leiser" }] }
+		{
+			"Name": "Weiter",
+			"UUID": "com.dave-swift.voicetune-streamdeck-api.next",
+			"Icon": "imgs/actions/icons/vor",
+			"Tooltip": "Nächster Titel",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/icons/vor",
+					"Title": "Weiter"
+				}
+			]
+		},
+		{
+			"Name": "Zurück",
+			"UUID": "com.dave-swift.voicetune-streamdeck-api.prev",
+			"Icon": "imgs/actions/icons/zuruck",
+			"Tooltip": "Vorheriger Titel",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/icons/zuruck",
+					"Title": "Zurück"
+				}
+			]
+		},
+		{
+			"Name": "Lauter",
+			"UUID": "com.dave-swift.voicetune-streamdeck-api.volup",
+			"Icon": "imgs/actions/icons/volume_up",
+			"Tooltip": "Musik lauter (+10 %)",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/icons/volume_up",
+					"Title": "Lauter"
+				}
+			]
+		},
+		{
+			"Name": "Leiser",
+			"UUID": "com.dave-swift.voicetune-streamdeck-api.voldown",
+			"Icon": "imgs/actions/icons/volume_down",
+			"Tooltip": "Musik leiser (-10 %)",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/icons/volume_down",
+					"Title": "Leiser"
+				}
+			]
+		}
 	],
 	"Category": "VoiceTune StreamDeck API",
 	"CategoryIcon": "imgs/plugin/category-icon",
@@ -49,8 +131,14 @@
 		"MinimumVersion": "7.1"
 	},
 	"OS": [
-		{ "Platform": "mac", "MinimumVersion": "12" },
-		{ "Platform": "windows", "MinimumVersion": "10" }
+		{
+			"Platform": "mac",
+			"MinimumVersion": "12"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
 	],
 	"Nodejs": {
 		"Version": "24",
