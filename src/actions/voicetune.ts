@@ -39,26 +39,26 @@ abstract class VtAction extends SingletonAction {
   }
 }
 
-@action({ UUID: "de.david.voicetune.toggle" })
+@action({ UUID: "com.dave-swift.voicetune-streamdeck-api.toggle" })
 export class ToggleMusic extends VtAction {
   protected cmd = "toggle";
-  protected stateOf(s: VtState) { return s.enabled; }
+  protected override stateOf(s: VtState) { return s.enabled; }
 }
-@action({ UUID: "de.david.voicetune.micmute" })
+@action({ UUID: "com.dave-swift.voicetune-streamdeck-api.micmute" })
 export class MicMute extends VtAction {
   protected cmd = "micmute";
-  protected stateOf(s: VtState) { return s.micMuted; }
+  protected override stateOf(s: VtState) { return s.micMuted; }
 }
-@action({ UUID: "de.david.voicetune.playpause" })
+@action({ UUID: "com.dave-swift.voicetune-streamdeck-api.playpause" })
 export class PlayPause extends VtAction {
   protected cmd = "playpause";
-  protected stateOf(s: VtState) { return s.playing; }
+  protected override stateOf(s: VtState) { return s.playing; }
 }
-@action({ UUID: "de.david.voicetune.next" })
+@action({ UUID: "com.dave-swift.voicetune-streamdeck-api.next" })
 export class Next extends VtAction { protected cmd = "next"; }
-@action({ UUID: "de.david.voicetune.prev" })
+@action({ UUID: "com.dave-swift.voicetune-streamdeck-api.prev" })
 export class Prev extends VtAction { protected cmd = "prev"; }
-@action({ UUID: "de.david.voicetune.volup" })
+@action({ UUID: "com.dave-swift.voicetune-streamdeck-api.volup" })
 export class VolUp extends VtAction { protected cmd = "musicvol_up"; }
-@action({ UUID: "de.david.voicetune.voldown" })
+@action({ UUID: "com.dave-swift.voicetune-streamdeck-api.voldown" })
 export class VolDown extends VtAction { protected cmd = "musicvol_down"; }

@@ -3,42 +3,42 @@
 	"Version": "0.1.0.0",
 	"Author": "Dave Swift",
 	"Actions": [
-	{
-		"Name": "Musik Ein/Aus", "UUID": "de.david.voicetune.toggle",
-		"Icon": "imgs/actions/counter/icon", "Tooltip": "Musik einspielen ein/aus",
-		"Controllers": ["Keypad"],
-		"States": [
-		{ "Image": "imgs/actions/counter/key", "Title": "Musik\nAus" },
-		{ "Image": "imgs/actions/counter/key", "Title": "Musik\nAn" }
-		]
-	},
-	{
-		"Name": "Mikro stumm", "UUID": "de.david.voicetune.micmute",
-		"Icon": "imgs/actions/counter/icon", "Tooltip": "Mikrofon stumm/an",
-		"Controllers": ["Keypad"],
-		"States": [
-		{ "Image": "imgs/actions/counter/key", "Title": "Mikro\nAn" },
-		{ "Image": "imgs/actions/counter/key", "Title": "Mikro\nStumm" }
-		]
-	},
-	{
-		"Name": "Play/Pause", "UUID": "de.david.voicetune.playpause",
-		"Icon": "imgs/actions/counter/icon", "Tooltip": "Datei-Player Play/Pause",
-		"Controllers": ["Keypad"],
-		"States": [
-		{ "Image": "imgs/actions/counter/key", "Title": "Play" },
-		{ "Image": "imgs/actions/counter/key", "Title": "Pause" }
-		]
-	},
-	{ "Name": "Weiter", "UUID": "de.david.voicetune.next", "Icon": "imgs/actions/counter/icon", "Tooltip": "Nächster Titel",
-		"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Weiter" }] },
-	{ "Name": "Zurück", "UUID": "de.david.voicetune.prev", "Icon": "imgs/actions/counter/icon", "Tooltip": "Vorheriger Titel",
-		"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Zurück" }] },
-	{ "Name": "Lauter", "UUID": "de.david.voicetune.volup", "Icon": "imgs/actions/counter/icon", "Tooltip": "Musik lauter (+10 %)",
-		"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Lauter" }] },
-	{ "Name": "Leiser", "UUID": "de.david.voicetune.voldown", "Icon": "imgs/actions/counter/icon", "Tooltip": "Musik leiser (-10 %)",
-		"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Leiser" }] }
-	]
+		{
+			"Name": "Musik Ein/Aus", "UUID": "com.dave-swift.voicetune-streamdeck-api.toggle",
+			"Icon": "imgs/actions/counter/icon", "Tooltip": "Musik einspielen ein/aus",
+			"Controllers": ["Keypad"],
+			"States": [
+				{ "Image": "imgs/actions/counter/key", "Title": "Musik\nAus" },
+				{ "Image": "imgs/actions/counter/key", "Title": "Musik\nAn" }
+			]
+		},
+		{
+			"Name": "Mikro stumm", "UUID": "com.dave-swift.voicetune-streamdeck-api.micmute",
+			"Icon": "imgs/actions/counter/icon", "Tooltip": "Mikrofon stumm/an",
+			"Controllers": ["Keypad"],
+			"States": [
+				{ "Image": "imgs/actions/counter/key", "Title": "Mikro\nAn" },
+				{ "Image": "imgs/actions/counter/key", "Title": "Mikro\nStumm" }
+			]
+		},
+		{
+			"Name": "Play/Pause", "UUID": "com.dave-swift.voicetune-streamdeck-api.playpause",
+			"Icon": "imgs/actions/counter/icon", "Tooltip": "Datei-Player Play/Pause",
+			"Controllers": ["Keypad"],
+			"States": [
+				{ "Image": "imgs/actions/counter/key", "Title": "Play" },
+				{ "Image": "imgs/actions/counter/key", "Title": "Pause" }
+			]
+		},
+		{ "Name": "Weiter", "UUID": "com.dave-swift.voicetune-streamdeck-api.next", "Icon": "imgs/actions/counter/icon", "Tooltip": "Nächster Titel",
+			"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Weiter" }] },
+		{ "Name": "Zurück", "UUID": "com.dave-swift.voicetune-streamdeck-api.prev", "Icon": "imgs/actions/counter/icon", "Tooltip": "Vorheriger Titel",
+			"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Zurück" }] },
+		{ "Name": "Lauter", "UUID": "com.dave-swift.voicetune-streamdeck-api.volup", "Icon": "imgs/actions/counter/icon", "Tooltip": "Musik lauter (+10 %)",
+			"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Lauter" }] },
+		{ "Name": "Leiser", "UUID": "com.dave-swift.voicetune-streamdeck-api.voldown", "Icon": "imgs/actions/counter/icon", "Tooltip": "Musik leiser (-10 %)",
+			"Controllers": ["Keypad"], "States": [{ "Image": "imgs/actions/counter/key", "Title": "Leiser" }] }
+	],
 	"Category": "VoiceTune StreamDeck API",
 	"CategoryIcon": "imgs/plugin/category-icon",
 	"CodePath": "bin/plugin.js",
@@ -49,14 +49,8 @@
 		"MinimumVersion": "7.1"
 	},
 	"OS": [
-		{
-			"Platform": "mac",
-			"MinimumVersion": "12"
-		},
-		{
-			"Platform": "windows",
-			"MinimumVersion": "10"
-		}
+		{ "Platform": "mac", "MinimumVersion": "12" },
+		{ "Platform": "windows", "MinimumVersion": "10" }
 	],
 	"Nodejs": {
 		"Version": "24",
