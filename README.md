@@ -20,6 +20,9 @@ Musik ein-/ausschalten, Mikrofon stumm schalten, Titel wechseln und Lautstärke 
 | Zurück | vorheriger Titel | nein |
 | Lauter | Musik-Lautstärke +10 % | nein |
 | Leiser | Musik-Lautstärke −10 % | nein |
+| Sound abspielen | Soundboard-Knopf abspielen, Auswahl in den Tasten-Einstellungen. Die Taste bleibt beim selben Knopf, auch wenn er im Soundboard verschoben wird | ja (Name, leuchtet beim Abspielen) |
+
+Ist TeamSpeak nicht erreichbar, zeigen alle Tasten „Offline“.
 
 ## Installation
 1. Die Datei `*.streamDeckPlugin` aus den [Releases](../../releases) herunterladen.

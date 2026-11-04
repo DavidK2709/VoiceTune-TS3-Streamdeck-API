@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; padding: 12px 16px; background: #2d2d2d; color: #d8d8d8; font: 13px "Segoe UI", sans-serif; }
+  .row { display: flex; align-items: center; gap: 8px; }
+  label { flex: 0 0 72px; color: #969696; }
+  select { flex: 1; min-width: 0; height: 26px; background: #3d3d3d; color: #d8d8d8; border: 0; border-radius: 3px; padding: 0 4px; font: inherit; }
+  button { height: 26px; background: #3d3d3d; color: #d8d8d8; border: 0; border-radius: 3px; padding: 0 8px; font: inherit; cursor: pointer; }
+  button:hover { background: #4d4d4d; }
+  #hint { margin: 10px 0 0 80px; color: #969696; font-size: 12px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <label for="slot">Sound</label>
+    <select id="slot" disabled></select>
+    <button id="reload" title="Liste neu laden">↻</button>
+  </div>
+  <p id="hint"></p>
+
+<script>
+  const select = document.getElementById("slot");
+  const hint = document.getElementById("hint");
+  let socket, uuid, actionId;
+  let settings = {};
+  let knownSounds = [];
+
+  function send(event, payload) {
+    socket.send(JSON.stringify({ event, context: uuid, action: actionId, payload }));
+  }
+
+  function addOption(value, text) {
+    const option = document.createElement("option");
+    option.value = value;
+    option.textContent = text; // Namen stammen vom Nutzer, daher nie als HTML einfügen
+    select.append(option);
+  }
+
+  // Die feste Knopf-ID ist die Auswahl; den Platz gibt es nur als Rückfall für Versionen ohne IDs
+  const valueOf = (s) => String(s.soundId || s.id || s.slot || "");
+
+  function showSounds({ online, sounds }) {
+    knownSounds = sounds;
+    select.replaceChildren();
+    addOption("", online ? "Bitte wählen …" : "—");
+    for (const s of sounds) addOption(valueOf(s), `${s.slot}: ${s.name}${s.ready ? "" : " (nicht bereit)"}`);
+
+    // Eine gespeicherte Wahl bleibt sichtbar, auch wenn der Knopf gerade leer oder TeamSpeak aus ist
+    const selected = valueOf(settings);
+    if (selected && !sounds.some((s) => valueOf(s) === selected)) {
+      addOption(selected, online ? "(leer oder gelöscht)" : "(nicht verfügbar)");
+    }
+    select.value = selected;
+    select.disabled = !online;
+    hint.textContent = !online ? "VoiceTune ist nicht erreichbar. Läuft TeamSpeak?"
+      : sounds.length === 0 ? "Im VoiceTune-Soundboard ist noch nichts belegt." : "";
+  }
+
+  select.addEventListener("change", () => {
+    const sound = knownSounds.find((s) => valueOf(s) === select.value);
+    settings = sound ? { slot: sound.slot, ...(sound.id ? { soundId: sound.id } : {}) } : {};
+    send("setSettings", settings);
+  });
+  document.getElementById("reload").addEventListener("click", () => send("sendToPlugin", { type: "getSounds" }));
+
+  // Wird von der Stream-Deck-Software aufgerufen
+  window.connectElgatoStreamDeckSocket = (port, inUuid, registerEvent, _info, actionInfo) => {
+    uuid = inUuid;
+    const info = JSON.parse(actionInfo);
+    actionId = info.action;
+    settings = info.payload.settings ?? {};
+    showSounds({ online: false, sounds: [] });
+    hint.textContent = "Lade Sounds …";
+
+    socket = new WebSocket(`ws://127.0.0.1:${port}`);
+    socket.onopen = () => {
+      socket.send(JSON.stringify({ event: registerEvent, uuid }));
+      send("sendToPlugin", { type: "getSounds" });
+    };
+    socket.onmessage = (message) => {
+      const data = JSON.parse(message.data);
+      if (data.event === "sendToPropertyInspector" && data.payload?.type === "sounds") showSounds(data.payload);
+      if (data.event === "didReceiveSettings") settings = data.payload.settings ?? {};
+    };
+  };
+</script>
+</body>
+</html>

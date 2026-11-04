@@ -8,6 +8,7 @@
 			"UUID": "com.dave-swift.voicetune-streamdeck-api.toggle",
 			"Icon": "imgs/actions/icons/play",
 			"Tooltip": "Musik einspielen ein/aus",
+			"DisableAutomaticStates": true,
 			"Controllers": [
 				"Keypad"
 			],
@@ -27,6 +28,7 @@
 			"UUID": "com.dave-swift.voicetune-streamdeck-api.micmute",
 			"Icon": "imgs/actions/icons/mic_toggle_on",
 			"Tooltip": "Mikrofon stumm/an",
+			"DisableAutomaticStates": true,
 			"Controllers": [
 				"Keypad"
 			],
@@ -46,6 +48,7 @@
 			"UUID": "com.dave-swift.voicetune-streamdeck-api.playpause",
 			"Icon": "imgs/actions/icons/play",
 			"Tooltip": "Datei-Player Play/Pause",
+			"DisableAutomaticStates": true,
 			"Controllers": [
 				"Keypad"
 			],
@@ -117,6 +120,29 @@
 				{
 					"Image": "imgs/actions/icons/volume_down",
 					"Title": "Leiser"
+				}
+			]
+		},
+		{
+			"Name": "Sound abspielen",
+			"UUID": "com.dave-swift.voicetune-streamdeck-api.sound",
+			"Icon": "imgs/actions/icons/sound_list",
+			"Tooltip": "Spielt einen Soundboard-Platz ab und zeigt an, ob er gerade läuft",
+			"PropertyInspectorPath": "ui/sound.html",
+			"DisableAutomaticStates": true,
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/icons/sound_idle",
+					"TitleAlignment": "bottom",
+					"FontSize": 12
+				},
+				{
+					"Image": "imgs/actions/icons/sound_active",
+					"TitleAlignment": "bottom",
+					"FontSize": 12
 				}
 			]
 		}
