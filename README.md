@@ -62,4 +62,4 @@ Invoke-WebRequest -Method POST -Headers @{"X-VoiceTune"="1"} http://127.0.0.1:19
 ```
 
 ## Autor
-David Koch
+David K X Tony S.
